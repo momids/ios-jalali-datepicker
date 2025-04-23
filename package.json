@@ -1,0 +1,33 @@
+{
+  "name": "ios-jalali-datepicker",
+  "version": "1.0.0",
+  "description": "A React component for selecting Jalali (Persian) dates with iOS-style picker",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "jalali",
+    "persian",
+    "datepicker",
+    "ios",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "date-fns-jalali": "^4.1.0-0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.0.0"
+  }
+} 

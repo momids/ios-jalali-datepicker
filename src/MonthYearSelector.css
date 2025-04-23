@@ -1,0 +1,121 @@
+.month-year-selector {
+    display: flex;
+    /*border: 1px solid #555; !* Optional border *!*/
+    border-radius: 8px;
+    overflow: hidden; /* To keep rounded corners */
+    width: 320px; /* Increased width for third column */
+    height: 300px; /* Fixed height for scroll */
+    background-color: white; /* Dark background for the selector */
+    position: relative; /* Needed for fixed pseudo-elements */
+    padding: 0 20px; /* Padding for the container */
+}
+
+/* Top and bottom fades */
+.month-year-selector::before,
+.month-year-selector::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 75px;
+    pointer-events: none;
+}
+
+.month-year-selector::before {
+    top: 0;
+    background: linear-gradient(
+            to bottom,
+            white 30%,
+            hsla(0, 0%, 12%, 0)
+    );
+    z-index: 2;
+}
+
+.month-year-selector::after {
+    bottom: 0;
+    background: linear-gradient(
+            to top,
+            white 30%,
+            hsla(0, 0%, 12%, 0)
+    );
+    z-index: 2;
+}
+
+/* Selection indicator */
+.month-year-selector {
+    position: relative;
+}
+
+.month-year-selector > div:first-child::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    right: 5px;
+    height: 34px;
+    transform: translateY(-50%);
+    background-color: rgba(66, 66, 66, 0.1);
+    border-radius: 6px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.column {
+    flex: 1;
+    overflow-y: auto; /* Enable scrolling within columns */
+    /* Adjust padding to center items */
+    padding: calc(150px - 17px) 0; /* (container_height / 2) - (item_height / 2) */
+    /* Hide scrollbar visually but allow scrolling */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    cursor: grab; /* Indicate draggable */
+}
+
+.column:active {
+    cursor: grabbing; /* Indicate dragging */
+}
+
+.column::-webkit-scrollbar {
+    display: none; /* WebKit browsers */
+}
+
+.item {
+    padding: 6px 15px;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    color: black; /* Default item color */
+}
+
+/* Align text in columns */
+.month-column .item {
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.day-column .item {
+    text-align: center; /* Center day numbers */
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.year-column .item {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Simple scrollbar styling (optional) */
+.column::-webkit-scrollbar {
+    width: 6px;
+}
+
+.column::-webkit-scrollbar-track {
+    background: #333;
+}
+
+.column::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 3px;
+}
