@@ -9,7 +9,8 @@
     "url": "git+https://github.com/momids/ios-jalali-datepicker.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run copy-css",
+    "copy-css": "copyfiles -u 1 \"src/**/*.css\" dist",
     "prepare": "npm run build"
   },
   "keywords": [
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "copyfiles": "^2.4.1",
     "typescript": "^5.0.0"
   }
 }
