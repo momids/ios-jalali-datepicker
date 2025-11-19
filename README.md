@@ -8,6 +8,15 @@ A React component for selecting Jalali (Persian) dates with iOS-style picker.
 npm install ios-jalali-datepicker
 ```
 
+## React Compatibility
+
+Compatible with React 16.8+, including **React 19** ✨
+
+- React 16.8+
+- React 17.x
+- React 18.x
+- React 19.x ✅
+
 ## Demo
 
 ![iOS Jalali DatePicker Demo](demo.gif)
